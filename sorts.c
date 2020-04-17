@@ -155,7 +155,7 @@ int partition(int v[], int l, int r) {
             p++;
         }
 
-        printf("p = %d; i = %d; v = [", p , i);
+        printf("p = %d; i = %d; v = [", p , i + 1);
         for (int index = l; index <= r; index++) {
             if (index == r) {
                 printf("%d]\n", v[index]);
