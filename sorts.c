@@ -1,5 +1,28 @@
 #include <stdio.h>
 
+int binary_search(int v[], int n, int q) {
+    int l = 0;
+    int r = n - 1;
+
+    while (l <= r) {
+        int m = (l + r) / 2;
+
+        printf("m = %d\n", m);
+        
+        if (v[m] == q) {
+            return m;
+        }
+
+        if (v[m] < q) {
+            l = m + 1;
+        } else {
+            r = m - 1;
+        }
+    }
+
+    return -1;
+}
+
 void bubble_sort(int v[], int n) {
     for (int i = n - 1; i > 0; i--) {
         int swapped = 0;
@@ -181,6 +204,15 @@ void printArray(int* arr, int n) {
 }
 
 int main() {
+    // BINARY SEARCH
+    // Não esqueça de colocar os tamanhos corretamente!
+    int array_binary_search[17] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17};
+
+    printf("\nBinary Search:\n");
+    printArray(array_binary_search, 17);
+    int m = binary_search(array_binary_search, 17, 8);
+    printf("Return value for Binary Search: %d\n", m);
+
     // BUBBLE SORT
     // Não esqueça de colocar os tamanhos corretamente!
     int array_bubble_sort[5] = {5, 2, 4, 6, 3};
