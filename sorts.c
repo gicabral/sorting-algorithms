@@ -112,16 +112,12 @@ void combine(int v[], int temp[], int l, int m, int r) {
             i++;
         }
 
-        // Printa o i, j e temp de acordo com as informações dadas no
-        // enunciado da questão.
-        if (l == 0 && m == 2 && r == 5) {
-            printf("i = %d; j = %d; temp = [", i , j);
-            for (int index = 0; index <= k; index++) {
-                if (index == k) {
-                    printf("%d]\n", temp[index]);
-                } else {
-                    printf("%d, ", temp[index]);
-                }
+        printf("i = %d; j = %d; temp = [", i , j);
+        for (int index = 0; index <= k; index++) {
+            if (index == k) {
+                printf("%d]\n", temp[index]);
+            } else {
+                printf("%d, ", temp[index]);
             }
         }
     }
@@ -159,16 +155,12 @@ int partition(int v[], int l, int r) {
             p++;
         }
 
-        // Printa o p, i e o v de acordo com as informações dadas no
-        // enunciado da questão.
-        if (l == 0 && r == 5) {
-            printf("p = %d; i = %d; v = [", p , i + 1);
-            for (int index = l; index <= r; index++) {
-                if (index == r) {
-                    printf("%d]\n", v[index]);
-                } else {
-                    printf("%d, ", v[index]);
-                }
+        printf("p = %d; i = %d; v = [", p , i);
+        for (int index = l; index <= r; index++) {
+            if (index == r) {
+                printf("%d]\n", v[index]);
+            } else {
+                printf("%d, ", v[index]);
             }
         }
     }
@@ -215,7 +207,7 @@ int main() {
 
     // BUBBLE SORT
     // Não esqueça de colocar os tamanhos corretamente!
-    int array_bubble_sort[5] = {5, 2, 4, 6, 3};
+    int array_bubble_sort[5] = {6, 9, 8, 5, 7};
     
     printf("\nBubble Sort:\n");
     printArray(array_bubble_sort, 5);
@@ -224,7 +216,7 @@ int main() {
 
     // SELECTION SORT
     // Não esqueça de colocar os tamanhos corretamente!
-    int array_selection_sort[5] = {5, 2, 4, 6, 3};
+    int array_selection_sort[5] = {6, 9, 8, 5, 7};
     
     printf("\nSelection Sort:\n");
     printArray(array_selection_sort, 5);
@@ -233,7 +225,7 @@ int main() {
 
     // INSERTION SORT
     // Não esqueça de colocar os tamanhos corretamente!
-    int array_insertion_sort[5] = {5, 2, 4, 6, 3};
+    int array_insertion_sort[5] = {6, 9, 8, 5, 7};
     
     printf("\nInsertion Sort:\n");
     printArray(array_insertion_sort, 5);
@@ -242,19 +234,20 @@ int main() {
 
     // MERGE SORT
     // Não esqueça de colocar os tamanhos corretamente!
-    int array_merge_sort[6] = {2, 4, 6, 3, 5, 7};
+    int array_merge_sort[6] = {4, 5, 7, 2, 3, 6};
+    int temp[6] = {0};
 
     printf("\nMerge Sort:\n");
     printArray(array_merge_sort, 6);
-    merge_sort(array_merge_sort, 6);
+    combine(array_merge_sort, temp, 0, 2, 5);
     printArray(array_merge_sort, 6);
 
     // QUICK SORT
     // Não esqueça de colocar os tamanhos corretamente!
-    int array_quick_sort[6] = {7, 2, 5, 3, 6, 4};
+    int array_quick_sort[6] = {6, 2, 5, 3, 7, 4};
 
-    printf("\nQuick Sort Sort:\n");
+    printf("\nQuick Sort:\n");
     printArray(array_quick_sort, 6);
-    quick_sort(array_quick_sort, 6);
+    partition(array_quick_sort, 0, 5);
     printArray(array_quick_sort, 6);
 }
